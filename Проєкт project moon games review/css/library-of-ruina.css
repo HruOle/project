@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.card {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #000000;
+    border: 3.3px solid #0b2261;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #1749c7, 0 0 18px rgba(23, 73, 199, 0.75), 0 0 32px rgba(23, 73, 199, 0.45);
+}
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 0;
+}
+.site-nav a {
+    padding: 9px 14px;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-family: Georgia, "Times New Roman", serif;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+    background-color: currentColor;
+    box-shadow: 0 0 12px currentColor;
+}
+.library-page .site-nav {
+    border-bottom: 1px solid rgba(98, 217, 196, 0.6);
+    color: #8af2dc;
+}
+.library-page .site-nav a:hover,
+.library-page .site-nav a:focus-visible,
+.library-page .site-nav a[aria-current="page"] {
+    color: #06100f;
+    background-color: #62d9c4;
+}
+.library-masthead {
+    padding: 0 0 24px;
+    background: #050b0b url("image/backgrouhnd.jpg") center 40% / cover no-repeat;
+    color: #8af2dc;
+    text-align: center;
+}
+.library-masthead h1 {
+    padding: 14px 16px 0;
+    color: #8af2dc;
+    font-size: clamp(28px, 5vw, 46px);
+    text-shadow: 0 0 10px rgba(83, 255, 224, 0.8), 0 0 24px rgba(83, 255, 224, 0.4);
+}
+.library-section {
+    position: relative;
+    isolation: isolate;
+    padding: 36px 0;
+    background: #090b0a url("image/backgrouhnd.jpg") center 45% / cover no-repeat;
+}
+.library-section > .container {
+    max-width: none;
+    margin-left: 60px;
+    margin-right: 0;
+    padding-left: clamp(6px, 3vw, 14px);
+}
+.library-section::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(3, 15, 14, 0.88), rgba(0, 0, 0, 0.68) 50%, rgba(25, 17, 8, 0.82));
+    content: "";
+}
+.library-section .cyan-gold-card {
+    width: min(720px, 100%);
+    margin-left: 0;
+    margin-right: auto;
+    background: rgba(4, 10, 10, 0.88);
+    border: 2px solid #62d9c4;
+    box-shadow: 0 0 10px rgba(67, 235, 207, 0.55), 0 0 28px rgba(67, 235, 207, 0.25);
+}
+.library-section h3 {
+    color: #8af2dc;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(83, 255, 224, 0.85), 0 0 20px rgba(83, 255, 224, 0.5);
+}
+.library-section h3::after,
+.library-section .review-placeholder h1::after {
+    display: block;
+    width: min(190px, 45%);
+    height: 2px;
+    margin: 12px auto 0;
+    background: linear-gradient(90deg, transparent, #e5c779, transparent);
+    box-shadow: 0 0 8px rgba(229, 199, 121, 0.7);
+    content: "";
+}
+.review-placeholder {
+    display: grid;
+    gap: 12px;
+    padding-top: 10px;
+}
+.library-section .review-placeholder strong {
+    background-color: #4f9989;
+}
+.library-section .review-placeholder p {
+    color: #e5d29a;
+    text-shadow: 0 0 8px rgba(229, 199, 121, 0.25);
+}
+.library-section .review-placeholder h1 {
+    color: #e5d29a;
+    font-size: 32px;
+    text-shadow: 0 0 8px rgb(216, 192, 119), 0 0 20px rgb(143, 122, 62);
+}

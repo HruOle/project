@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.card {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #000000;
+    border: 3.3px solid #0b2261;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #1749c7, 0 0 18px rgba(23, 73, 199, 0.75), 0 0 32px rgba(23, 73, 199, 0.45);
+}
+p {
+    color: #d6c6ae;
+    text-align: left;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 0;
+}
+.site-nav a {
+    padding: 9px 14px;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-family: Georgia, "Times New Roman", serif;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+    background-color: currentColor;
+    box-shadow: 0 0 12px currentColor;
+}
+.limbus-page .site-nav {
+    border-bottom: 1px solid rgba(210, 75, 61, 0.65);
+    color: #e0c6a0;
+}
+.limbus-page .site-nav a:hover,
+.limbus-page .site-nav a:focus-visible,
+.limbus-page .site-nav a[aria-current="page"] {
+    color: #1a0908;
+    background-color: #d24b3d;
+}
+.limbus-masthead {
+    padding: 0 0 24px;
+    background: linear-gradient(140deg, #180c0b, #331412 55%, #090909);
+    color: #e0c6a0;
+    text-align: center;
+}
+.limbus-masthead h1 {
+    padding: 18px 16px 0;
+    color: #e0c6a0;
+    font-size: clamp(28px, 5vw, 46px);
+    text-shadow: 0 0 12px rgba(210, 75, 61, 0.7);
+}
+.limbus-main {
+    padding-top: 28px;
+}
+.limbus-card {
+    max-width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+    border-color: #762f2c;
+    box-shadow: 0 0 10px rgba(210, 75, 61, 0.45), 0 0 24px rgba(210, 75, 61, 0.2);
+}
+.limbus-card h2 {
+    color: #e0c6a0;
+    text-align: center;
+}
