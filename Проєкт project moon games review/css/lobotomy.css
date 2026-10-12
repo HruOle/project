@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -48,6 +52,11 @@ body {
     font-family: Arial, sans-serif;
 }
 .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -69,6 +78,7 @@ body {
     box-shadow: 0 0 12px currentColor;
 }
 .lobotomy-page .site-nav {
+    background: linear-gradient(to bottom, rgb(88, 7, 7), rgb(0, 0, 0));
     border-bottom: 1px solid rgba(222, 181, 86, 0.55);
     color: #d7b75e;
 }
@@ -77,6 +87,33 @@ body {
 .lobotomy-page .site-nav a[aria-current="page"] {
     color: #220b08;
     background-color: #d7b75e;
+}
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1001;
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d7b75e;
+    border-radius: 50%;
+    background: #220b08;
+    color: #f2d982;
+    font-size: 26px;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 0 12px rgba(255, 218, 70, 0.5);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    transform: translateY(-3px);
+    background: #d7b75e;
+    color: #220b08;
+    box-shadow: 0 0 18px rgba(255, 218, 70, 0.8);
 }
 h1,
 h2,
@@ -178,27 +215,14 @@ p {
     color: rgb(124, 13, 13);
     text-align: left;
 }
-.review-section {
-    margin-top: 25px;
-}
-.review-card {
-    background-color: #000000;
-    border: 3.3px solid #0b2261;
-    border-radius: 8px;
-    box-shadow: 0 0 8px #1749c7, 0 0 18px rgba(23, 73, 199, 0.75), 0 0 32px rgba(23, 73, 199, 0.45);
-}
-.review-placeholder {
-    display: grid;
-    gap: 12px;
-    padding-top: 10px;
-}
-.review-placeholder p {
-    margin: 0;
-    color: rgb(211, 197, 74);
-}
 .background {
     background: linear-gradient(to bottom, rgb(88, 7, 7) 0%, rgb(0, 0, 0) 100%);
 }
+
+.background > .container {
+    padding-top: 120px;
+}
+
 .character-list {
     width: fit-content;
     margin: 0 auto;
@@ -276,20 +300,6 @@ strong {
     margin: 0 auto;
     color: rgb(179, 9, 9);
     text-align: center;
-}
-.table-container {
-    width: 100%;
-    border-collapse: collapse;
-}
-.table-container th,
-.table-container td {
-    padding: 8px;
-    border: 1px solid #830606;
-}
-.image-container {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #532b0a;
 }
 .background2 {
     width: 100%;

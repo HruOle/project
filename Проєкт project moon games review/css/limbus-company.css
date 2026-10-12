@@ -1,12 +1,19 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     background-color: #000000;
     font-family: Arial, sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -14,11 +21,13 @@ h4 {
     font-family: Georgia, "Times New Roman", serif;
     line-height: 1.5;
 }
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 15px;
 }
+
 .card {
     margin-bottom: 25px;
     padding: 20px;
@@ -27,6 +36,7 @@ h4 {
     border-radius: 8px;
     box-shadow: 0 0 8px #1749c7, 0 0 18px rgba(23, 73, 199, 0.75), 0 0 32px rgba(23, 73, 199, 0.45);
 }
+
 p {
     color: #d6c6ae;
     text-align: left;
@@ -34,6 +44,11 @@ p {
     line-height: 1.5;
 }
 .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -55,6 +70,7 @@ p {
     box-shadow: 0 0 12px currentColor;
 }
 .limbus-page .site-nav {
+    background: linear-gradient(140deg, #180c0b, #331412 55%, #090909);
     border-bottom: 1px solid rgba(210, 75, 61, 0.65);
     color: #e0c6a0;
 }
@@ -64,8 +80,35 @@ p {
     color: #1a0908;
     background-color: #d24b3d;
 }
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1001;
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d24b3d;
+    border-radius: 50%;
+    background: #1a0908;
+    color: #e0c6a0;
+    font-size: 26px;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 0 12px rgba(210, 75, 61, 0.5);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    transform: translateY(-3px);
+    background: #d24b3d;
+    color: #1a0908;
+    box-shadow: 0 0 18px rgba(210, 75, 61, 0.8);
+}
 .limbus-masthead {
-    padding: 0 0 24px;
+    padding: 120px 0 24px;
     background: linear-gradient(140deg, #180c0b, #331412 55%, #090909);
     color: #e0c6a0;
     text-align: center;
