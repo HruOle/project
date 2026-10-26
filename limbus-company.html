@@ -20,6 +20,48 @@
                 <h2>Акт 3: Limbus Company</h2>
                 <p>Огляд Limbus Company.</p>
             </section>
+            <section class="contact-section" id="contact">
+                <h2>Зв’язатися з нами</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-field">
+                        <label for="user-name">Ім’я</label>
+                        <input type="text" id="user-name" name="user_name" placeholder="Наприклад, Данте" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="user-email">Електронна пошта</label>
+                        <input type="email" id="user-email" name="user_email" placeholder="name@example.com" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contact-topic">Оберіть тему звернення</label>
+                        <select id="contact-topic" name="topic">
+                            <option value="" disabled selected>--- Оберіть варіант ---</option>
+                            <option value="gameplay">Ігровий процес</option>
+                            <option value="characters">Персонажі та історія</option>
+                            <option value="feedback">Відгук про сайт</option>
+                        </select>
+                    </div>
+                    <fieldset class="form-field contact-method">
+                        <legend>Як із вами зв’язатися?</legend>
+                        <div class="choice-option">
+                            <input type="radio" id="contact-email" name="contact_method" value="email">
+                            <label for="contact-email">Відповісти на Email</label>
+                        </div>
+                        <div class="choice-option">
+                            <input type="radio" id="contact-phone" name="contact_method" value="phone">
+                            <label for="contact-phone">Зателефонувати</label>
+                        </div>
+                    </fieldset>
+                    <div class="form-field">
+                        <label for="message">Ваше повідомлення</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Напишіть ваше повідомлення..."></textarea>
+                    </div>
+                    <div class="choice-option consent-option">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Я погоджуюсь на обробку персональних даних</label>
+                    </div>
+                    <button type="submit">Надіслати повідомлення</button>
+                </form>
+            </section>
         </main>
         <footer class="site-footer">
             <p>Проєкт: Project Moon Games Review</p>
