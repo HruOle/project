@@ -51,6 +51,10 @@
                             <label for="contact-phone">Зателефонувати</label>
                         </div>
                     </fieldset>
+                    <div class="form-field" id="phone-field" hidden>
+                        <label for="phone-number">Номер телефону</label>
+                        <input type="tel" id="phone-number" name="phone_number" placeholder="+380..." autocomplete="tel">
+                    </div>
                     <div class="form-field">
                         <label for="message">Ваше повідомлення</label>
                         <textarea id="message" name="message" rows="4" placeholder="Напишіть ваше повідомлення..."></textarea>
@@ -69,5 +73,22 @@
             <p>Автор: Грудзевич Олександр</p>
         </footer>
         <a class="back-to-top" href="#page-top" aria-label="Повернутися нагору">↑</a>
+        <script>
+            const phoneField = document.getElementById("phone-field");
+            const phoneNumber = document.getElementById("phone-number");
+            const contactMethods = document.querySelectorAll('input[name="contact_method"]');
+
+            function updatePhoneField() {
+                const shouldShowPhone = document.getElementById("contact-phone").checked;
+                phoneField.hidden = !shouldShowPhone;
+                phoneNumber.required = shouldShowPhone;
+            }
+
+            contactMethods.forEach((method) => {
+                method.addEventListener("change", updatePhoneField);
+            });
+
+            updatePhoneField();
+        </script>
     </body>
 </html>

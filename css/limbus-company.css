@@ -61,13 +61,16 @@ p {
     color: inherit;
     font-family: Georgia, "Times New Roman", serif;
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .site-nav a[aria-current="page"] {
     background-color: currentColor;
     box-shadow: 0 0 12px currentColor;
+}
+.site-nav a:active {
+    transform: scale(0.96);
 }
 .limbus-page .site-nav {
     background: linear-gradient(140deg, #180c0b, #331412 55%, #090909);
@@ -106,6 +109,10 @@ p {
     background: #d24b3d;
     color: #1a0908;
     box-shadow: 0 0 18px rgba(210, 75, 61, 0.8);
+}
+.back-to-top:active {
+    transform: translateY(0) scale(0.92);
+    box-shadow: 0 0 8px rgba(210, 75, 61, 0.6);
 }
 .site-footer {
     padding: 22px 15px 28px;
@@ -236,5 +243,54 @@ p {
 @media (max-width: 480px) {
     .contact-form {
         padding: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        scroll-padding-top: 100px;
+    }
+
+    .site-nav {
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .site-nav a {
+        flex: 1 1 30%;
+        padding: 8px 6px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .limbus-masthead {
+        padding-top: 110px;
+    }
+
+    .limbus-main {
+        padding-top: 18px;
+    }
+
+    .limbus-card {
+        padding: 16px;
+    }
+
+    .contact-section {
+        margin: 24px 0;
+    }
+
+    .contact-form {
+        padding: 16px;
+    }
+
+    .contact-form button[type="submit"] {
+        width: 100%;
+    }
+
+    .back-to-top {
+        right: 14px;
+        bottom: 14px;
+        width: 44px;
+        height: 44px;
     }
 }

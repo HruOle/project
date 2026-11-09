@@ -7,6 +7,12 @@ html {
     margin: 0;
     padding: 0;
 }
+img {
+    transition: transform 0.3s ease;
+}
+img:hover {
+    transform: scale(1.10);
+}
 body {
     background-color: #000000;
     font-family: Arial, sans-serif;
@@ -58,13 +64,16 @@ p {
     color: inherit;
     font-family: Georgia, "Times New Roman", serif;
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .site-nav a[aria-current="page"] {
     background-color: currentColor;
     box-shadow: 0 0 12px currentColor;
+}
+.site-nav a:active {
+    transform: scale(0.96);
 }
 .library-page .site-nav {
     background: #050b0b;
@@ -103,6 +112,10 @@ p {
     background: #62d9c4;
     color: #06100f;
     box-shadow: 0 0 18px rgba(67, 235, 207, 0.75);
+}
+.back-to-top:active {
+    transform: translateY(0) scale(0.92);
+    box-shadow: 0 0 8px rgba(67, 235, 207, 0.6);
 }
 .site-footer {
     padding: 22px 15px 28px;
@@ -173,23 +186,7 @@ p {
 .game-mechanics {
     padding: 36px 0;
 }
-.game-mechanics > .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    max-width: none;
-    margin: 0 auto;
-    padding-left: clamp(6px, 3vw, 14px);
-    padding-right: 12px;
-}
-.game-mechanics .game-mechanics-card {
-    width: min(1300px, 100%);
-    margin: 0 auto;
-    background: rgba(4, 10, 10, 0.88);
-    border: 2px solid #62d9c4;
-    box-shadow: 0 0 10px rgba(67, 235, 207, 0.55), 0 0 28px rgba(67, 235, 207, 0.25);
-}
+
 .game-mechanics h3 {
     color: #8af2dc; 
     font-size: 32px;
@@ -279,7 +276,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    position: sticky;
+    position: relative;
     top: 96px;
 }
 
@@ -415,19 +412,112 @@ p {
 
 @media (max-width: 900px) {
     .library-section > .container {
+        grid-template-columns: minmax(0, 1fr);
         margin-left: 0;
+        margin-right: auto;
         padding-left: 15px;
         padding-right: 15px;
-        flex-direction: column;
     }
 
     .media-frame {
         width: 100%;
         margin-left: 0;
-        min-height: unset;
+        top: 0;
     }
 
     .media-pair {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        scroll-padding-top: 100px;
+    }
+
+    .site-nav {
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .site-nav a {
+        flex: 1 1 30%;
+        padding: 8px 6px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .library-masthead {
+        padding-top: 110px;
+    }
+
+    .library-section,
+    .game-mechanics {
+        padding: 20px 0;
+    }
+
+    .library-section > .container {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .library-section .cyan-gold-card,
+    .game-mechanics-card {
+        padding: 16px;
+    }
+
+    .library-section h3,
+    .game-mechanics h3,
+    .library-section .review-placeholder h1,
+    .library-section .review-placeholder h2,
+    .library-section .review-placeholder h3,
+    .library-section .review-placeholder h4 {
+        font-size: clamp(21px, 6vw, 28px);
+    }
+
+    .floor-entry {
+        padding: 12px;
+    }
+
+    .floor-entry-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .floor-entry-header h3 {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    .librarian-portrait {
+        width: 56px;
+        height: 56px;
+    }
+
+    .media-frame {
+        padding: 4px;
+    }
+
+    .media-pair {
+        gap: 8px;
+    }
+
+    .floor-card--keter,
+    .floor-card--religion,
+    .floor-card--philosophy,
+    .floor-card--social,
+    .floor-card--language,
+    .floor-card--nature,
+    .floor-card--art,
+    .floor-card--literature,
+    .floor-card--technology,
+    .floor-card--history {
+        transform: none;
+    }
+
+    .back-to-top {
+        right: 14px;
+        bottom: 14px;
+        width: 44px;
+        height: 44px;
     }
 }
